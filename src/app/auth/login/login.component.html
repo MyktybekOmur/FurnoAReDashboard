@@ -1,1 +1,87 @@
-<p>login works!</p>
+<div class="container-fluid container-application">
+    <div class="main-content position-relative">
+    <div class="page-content">
+        <div class="min-vh-100 py-5 d-flex align-items-center">
+            <div class="w-100">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-lg-4">
+                        <div class="card shadow zindex-100 mb-0">
+                            <div class="card-body px-md-5 py-5">
+                                <div class="mb-5">
+                                    <h6 class="h3">Login</h6>
+                                    <p class="text-muted mb-0">Sign in to your account to continue.</p>
+                                </div>
+                                <span class="clearfix"></span>
+                                <form role="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                                    <div class="form-group">
+                                        <label class="form-control-label">Email address</label>
+                                        <div class="input-group input-group-merge">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="email" name="username" [(ngModel)]="form.username" required
+                                                #username="ngModel" class="form-control" id="input-email"
+                                                placeholder="name@example.com">
+                                        </div>
+                                        <div class="alert alert-danger" role="alert"
+                                            *ngIf="username.errors && f.submitted">
+                                            Kullanıcı adı gerekli!
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <label class="form-control-label">Password</label>
+                                            </div>
+                                            <div class="mb-2">
+                                                <a routerLink="/reset-password"
+                                                    class="small text-muted text-underline--dashed border-primary">Lost
+                                                    password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group-merge">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input type="password" name="password" [(ngModel)]="form.password" required
+                                                minlength="6" #password="ngModel" class="form-control"
+                                                id="input-password" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <a href="#" data-toggle="password-text"
+                                                        data-target="#input-password">
+                                                        <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-danger" role="alert"
+                                            *ngIf="password.errors && f.submitted">
+                                            <div *ngIf="password">Şifre gereklidir</div>
+                                            <div *ngIf="password">
+                                                Şifre en az 6 karakterden oluşmalıdır
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4"><button type="submit"
+                                            class="btn btn-sm btn-primary btn-icon rounded-pill">
+                                            <span class="btn-inner--text">Sign in</span>
+                                            <span class="btn-inner--icon"><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span>
+                                        </button></div>
+                                    <div class="form-group">
+                                        <div class="alert alert-danger" role="alert"
+                                            *ngIf="f.submitted && isLoginFailed">
+                                            Giriş başarısız: {{ errorMessage }}
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
