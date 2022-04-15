@@ -1,0 +1,144 @@
+<div class="page-content">
+    <!-- Page title -->
+    <div class="page-title">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+                <!-- Page title + Go Back button -->
+                <div class="page-title">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-12 mb-md-0">
+                            <h5 class="h3 font-weight-400 mb-0 text-white">Kullanıcılar</h5>
+                            <span> 10 adet</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-end">
+                <div class="actions actions-dark d-inline-block">
+                    <a href="#" class="action-item ml-md-4">
+                        <i class="fas fa-file-export mr-2"></i>Dışarı Aktar
+                    </a>
+                </div>
+                <a routerLink="/admin/add-user" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4"
+                    data-toggle="modal">
+                    <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Page title end-->
+    <!-- user and reklam block -->
+    <div class="row">
+        <div class="col">
+            <div class="card card-fluid">
+                <div class="card-header actions-toolbar">
+                    <div class="actions-search" id="actions-search">
+                      <div class="input-group input-group-merge input-group-flush">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control form-control-flush" placeholder="Type and hit enter ...">
+                        <div class="input-group-append">
+                          <a href="#" class="input-group-text bg-transparent" data-action="search-close" data-target="#actions-search"><i class="fas fa-times"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col">
+                        <h6 class="d-inline-block mb-0">Kullanıcılar</h6>
+                      </div>
+                      <div class="col text-right">
+                        <div class="actions"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
+                          <div class="dropdown mr-3">
+                            <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-filter"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">
+                                <i class="fas fa-sort-amount-down"></i>Newest
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <i class="fas fa-sort-alpha-down"></i>From A-Z
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <i class="fas fa-sort-alpha-up"></i>From Z-A
+                              </a>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-toggle="dropdown">
+                            <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a href="#" class="dropdown-item">Refresh</a>
+                              <a href="#" class="dropdown-item">Manage Widgets</a>
+                              <a href="#" class="dropdown-item">Settings</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sort" data-sort="name">Ad Soyad</th>
+                                <th scope="col" class="sort" data-sort="budget">Kaydolma Tarihi</th>
+                                <th scope="col" class="sort" data-sort="budget">Telefon no</th>
+                                <th scope="col" class="sort" data-sort="status">Email</th>
+                                <th scope="col" class="sort" data-sort="completion">Role</th>
+                                <th scope="col" class="sort" data-sort="completion"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            <tr *ngFor="let item of [].constructor(10)">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div>
+                                            <img alt="Image placeholder"
+                                            src="assets/img/profile/1.jpg" class="avatar-sm rounded-circle">
+                                        </div>
+                                        <div class="media-body ml-4 d-flex flex-column">
+                                            <a [routerLink]="['/admin/users/user-detail']" class="name mb-0 h6 text-sm">John Sullivan</a>
+                                            <span>#1001</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="budget">
+                                    <span class=""> 22/04/2022</span>
+                                </td>
+                                <td>
+                                   05523371080
+                                </td>
+                                <td>
+                                    f181213088@ktun.edu.tr
+                                </td>
+                                <td>
+                                  Admin
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <span class="mr-2"><i class="far fa-edit"></i></span>
+                                        <span href="#modal-update" data-toggle="modal" class="mr-2 "><i
+                                                class="fas fa-pencil-alt"></i></span>
+                                        <span class="mr-2 text-danger"><i class="fas fa-trash"></i></span>
+                                    </div>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Load more -->
+     <div class="mt-4 text-center">
+        <a href="#" class="btn btn-sm btn-neutral rounded-pill shadow hover-translate-y-n3">Daha fazla göster ...</a>
+    </div>
+    <!-- user and reklam block end-->
+</div>

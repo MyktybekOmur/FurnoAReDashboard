@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     this.chartotions = {
       series: [
         {
-          name: 'Satış',
+          name: 'İzlenme',
           data: [10, 15, 20, 15, 30, 20, 10, 20, 25],
           color: '#FEB019',
          

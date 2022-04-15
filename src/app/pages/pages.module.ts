@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProductsComponent } from './products/products.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -14,7 +16,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   declarations: [
     routingPageComponents,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,
