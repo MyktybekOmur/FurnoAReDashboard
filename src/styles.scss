@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+//input file
+.file-input{
+    height: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &-img{
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+
+    }
+}

@@ -1,3 +1,4 @@
+import { UserAddComponent } from './../modal/user-add/user-add.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { NgModule } from '@angular/core';
@@ -24,5 +25,6 @@ const routes: Routes = [{
 export class PagesRoutingModule { }
 export const routingPageComponents = [
   MainComponent,
-  HomeComponent
+  HomeComponent,
+  UserAddComponent
 ]
