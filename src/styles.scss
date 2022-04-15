@@ -10,6 +10,9 @@ body {
   position: relative;
   height: 100%;
 }
+.active {
+    color: #fcaf00 !important;
+}
 .file-input{
     height: 100px !important;
     display: flex;

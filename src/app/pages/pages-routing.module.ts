@@ -1,3 +1,4 @@
+import { AddProductComponent } from './add-product/add-product.component';
 import { UserAddComponent } from './../modal/user-add/user-add.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
@@ -14,6 +15,7 @@ const routes: Routes = [{
     { path: 'home', component: HomeComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'products/product-details', component: ProductDetailComponent },
+    { path: 'products/add-product', component: AddProductComponent },
     { path: 'users', component: UsersComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
   ],

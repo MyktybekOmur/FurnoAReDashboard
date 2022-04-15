@@ -1,0 +1,191 @@
+<div class="page-content">
+    <!-- Page title -->
+    <div class="page-title w-75 m-auto">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+                <!-- Page title + Go Back button -->
+                <div class="page-title">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-12 mb-md-0">
+                            <h5 class="h3 font-weight-400 mb-0 text-white">Yeni Ürün Ekle</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-end">
+         
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row w-75 m-auto pt-3">
+        <div class="col-12">
+            <div class="card card-fluid col-12">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label class="form-control-label">
+                                ürün Adı
+                            </label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label class="form-control-label">
+                                Ürün Fiyatı
+                            </label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label class="form-control-label">
+                              Ürün rengi
+                            </label>
+                            <input type="color" class="form-control">
+                        </div>
+                     
+                        <div class="align-items-end form-group col-sm-12 col-md-6">
+                            <label class="form-control-label">Ürün Kategorisi</label>
+                            <select value="1" class="form-select form-select-lg form-control"
+                                aria-label=".form-select-lg example">
+                                <option value="1">Seç</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-12 col-md-12">
+                            <label class="form-control-label">
+                                Açıklaması
+                            </label>
+                            <textarea type="text" rows="6" class="form-control"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-title w-75 m-auto">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+                <!-- Page title + Go Back button -->
+                <div class="page-title">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-12 mb-md-0">
+                            <h5 class="h4 font-weight-400 mb-0 text-gray">Alt Parçaları</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row w-75 m-auto pt-3">
+        <div class="col-12">
+            <div class="card card-fluid col-12">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="align-items-end form-group col-sm-12 col-md-6">
+                            <label class="form-control-label">Parça Syısı</label>
+                            <select [(ngModel)]="countQuiz" (ngModelChange)="getNumber(countQuiz)" value="1" class="form-select form-select-lg form-control"
+                                aria-label=".form-select-lg example">
+                                <option value="0" disabled>Seç</option>
+                                <option value="{{i}}" *ngFor="let item of [].constructor(10); let i=index">{{i}}</option>
+                            </select>
+                        </div>
+                        <div class="col-12" *ngFor="let item of tempForQuizCount; let i=index">
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label class="form-control-label">
+                                        ürün Adı
+                                    </label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label class="form-control-label">
+                                        Ürün Fiyatı
+                                    </label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label class="form-control-label">
+                                      Ürün rengi
+                                    </label>
+                                    <input type="color" class="form-control">
+                                </div>
+                             
+                                <div class="align-items-end form-group col-sm-12 col-md-6">
+                                    <label class="form-control-label">Ürün Kategorisi</label>
+                                    <select value="1" class="form-select form-select-lg form-control"
+                                        aria-label=".form-select-lg example">
+                                        <option value="1">Seç</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <label class="form-control-label">
+                                        Açıklaması
+                                    </label>
+                                    <textarea type="text" rows="6" class="form-control"></textarea>
+                                </div>
+        
+                            </div>
+                          
+
+                        </div>
+                  
+                    
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="row w-75 m-auto pt-3">
+        <div class="col-12">
+          
+           
+
+        </div>
+    </div>
+    <div class="row w-75 m-auto pt-3">
+        <div class="col-12">
+            <div class="card card-fluid col-12">
+                <div class="card-body">
+                    <div class="form-group col-12">
+                        <label class="form-control-label">
+                            Ürün 3d Objesi
+                        </label>
+                        <small class="form-text text-muted mb-2 mt-0">Dosyanızı sürekleyerek aşağıdaki bırakınız</small>
+                        <div class="form-control file-input">
+                            <small class="form-text text-muted mb-2 mt-0">Dosyanızı yüklemek için buraya tıklayın</small>
+                            <input type="file" name="file" class="file-input-img opacity-0">
+                        </div>
+                        
+                    </div>
+                </div>
+            
+                    <div class="card-body">
+                        <div class="form-group col-12">
+                            <label class="form-control-label">
+                               Ürün Fotoğrafı
+                            </label>
+                            <small class="form-text text-muted mb-2 mt-0">Dosyanızı sürekleyerek aşağıdaki bırakınız</small>
+                            <div class="form-control file-input">
+                                <small class="form-text text-muted mb-2 mt-0">Dosyanızı yüklemek için buraya tıklayın</small>
+                                <input type="file" name="file" class="file-input-img opacity-0">
+                            </div>
+                            
+                        </div>
+                    </div>
+             
+                <div class="card-footer save">
+                    <button type="button" class="btn btn-sm rounded-pill " >Vazgeç</button>
+                    <button type="button" class="btn btn-sm btn-primary rounded-pill " >Ürünü Yayınla</button>
+                   
+                  </div>
+            </div>
+           
+
+        </div>
+    </div>
+</div>

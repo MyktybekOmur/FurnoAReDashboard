@@ -9,6 +9,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SwiperModule } from "swiper/angular";
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
@@ -18,6 +19,7 @@ import { ProductSliderComponent } from './components/product-slider/product-slid
     HeaderComponent,
     FooterComponent,
     ProductSliderComponent,
+    AddProductComponent,
    
   ],
   imports: [
