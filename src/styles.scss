@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 //input file
+@import "~swiper/css";
+@import "~swiper/css/free-mode";
+@import "~swiper/css/navigation";
+@import "~swiper/css/thumbs";
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
 .file-input{
     height: 100px !important;
     display: flex;
