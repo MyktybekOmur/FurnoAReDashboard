@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
       cancelButtonText: 'İptal',
     }).then((result) => {
       if (result.value) {
-        this.deleteUser(id); //Swal.fire('Başarılı silindi!', 'success');
+        this.deleteUser(id); Swal.fire('Başarılı silindi!', 'success');
 
       
       } else if (result.dismiss === Swal.DismissReason.cancel) {

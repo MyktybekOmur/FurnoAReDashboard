@@ -1,0 +1,64 @@
+<div class="page-content">
+    <!-- Page title -->
+    <div class="page-title">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+                <!-- Page title + Go Back button -->
+                <div class="page-title">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-12 mb-md-0">
+                            <h5 class="h3 font-weight-400 mb-0 text-white">Kategoriler(25)</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-end">
+                <div class="actions actions-dark d-inline-block">
+                    <a class="action-item ml-md-4">
+                        <i class="fas fa-file-export mr-2"></i>Dışarı Aktar
+                    </a>
+                </div>
+                <a href="#modal-add-category" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4"
+                     data-toggle="modal">
+                    <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let item of [].constructor(12); let i=index" class="col-xs-12 col-md-6 col-lg-3">
+            <div class="card">
+                <div class="card-body text-center"><a class="avatar rounded-circle avatar-lg hover-translate-y-n3">
+                    <img alt="Image placeholder" src="assets/img/products/prd_01.jpeg" class="">
+                  </a>
+                  <h5 class="h6 my-4"><a>Yatak Odası</a></h5>
+                  <div class="avatar-group hover-avatar-ungroup mb-3">
+                    <span class="company-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum architecto consequuntur quaerat, ducimus maxime repellendus!
+                    </span>
+                  </div>
+                  <span class="clearfix"></span>
+                  <span class="badge badge-pill badge-warning">2{{i}}0</span>
+                </div>
+                <div class="card-footer">
+                  <div class="actions d-flex justify-content-between px-4">
+                    <a href="#modal-add-category" class="action-item" data-toggle="modal">
+                        <i class="far fa-edit"></i>
+                    </a>
+                    <a (click)="alertConfirmation('5')" class="action-item text-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+     <!-- Load more -->
+     <div class="mt-4 text-center">
+        <a  class="btn btn-sm btn-neutral rounded-pill shadow hover-translate-y-n3">Daha fazla göster ...</a>
+    </div>
+    <!-- user and reklam block end-->
+</div>
+<app-add-category></app-add-category>

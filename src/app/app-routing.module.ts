@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   {
-    path: '',
+    path: 'admin',
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
   },

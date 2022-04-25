@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
   deleteUser(id: string){
 
   }
@@ -35,5 +33,4 @@ export class UsersComponent implements OnInit {
       }
     });
   }
-
 }

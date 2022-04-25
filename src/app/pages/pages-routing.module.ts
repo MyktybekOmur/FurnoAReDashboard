@@ -1,3 +1,4 @@
+import { CategoriesComponent } from './categories/categories.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { UserAddComponent } from './../modal/user-add/user-add.component';
 import { UsersComponent } from './users/users.component';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AddCategoryComponent } from '../modal/add-category/add-category.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,7 +19,8 @@ const routes: Routes = [{
     { path: 'products/product-details', component: ProductDetailComponent },
     { path: 'products/add-product', component: AddProductComponent },
     { path: 'users', component: UsersComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'categories', component: CategoriesComponent },
+    { path: '', redirectTo: '/admin/home', pathMatch: 'full' },
   ],
 }
 ];
@@ -33,5 +36,7 @@ export const routingPageComponents = [
   UserAddComponent,
   UsersComponent,
   ProductsComponent,
-  ProductDetailComponent
+  ProductDetailComponent,
+  CategoriesComponent,
+  AddCategoryComponent
 ]

@@ -10,6 +10,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SwiperModule } from "swiper/angular";
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 
@@ -20,6 +21,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     FooterComponent,
     ProductSliderComponent,
     AddProductComponent,
+    CategoriesComponent,
    
   ],
   imports: [
