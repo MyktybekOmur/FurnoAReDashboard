@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category/category.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-products',
@@ -6,18 +8,35 @@ import Swal from 'sweetalert2';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-
-  constructor() { }
+  prds:any;
+  cats:any;
+  constructor(private prdApi:ProductService,private catApi: CategoryService,private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.getProducts();
+    this.getCategories();
+  }
+  getPrdWithCat(cat:string){
+    this.prdApi.getPrd(cat).subscribe(res=>{
+      this.prds = res;
+    })
+  }
+  getProducts(){
+    this.prdApi.getProducts().subscribe(res=>{
+      this.prds = res;
+    })
+  }
+  getCategories(){
+    this.catApi.getCategries().subscribe(res=>{
+      this.cats = res;
+    })
   }
 
-
-  deleteUser(id: string){
-
+  deleteUser(id: any){
+this.prdApi.deleteProduct(id);
   }
   //alertConfirm
-  alertConfirmation(id: string) {
+  alertConfirmation(id: any) {
     Swal.fire({
       title: 'Silmek ister misiniz?',
       text: 'Seçmiş olduğunuz veri silinecektir.',

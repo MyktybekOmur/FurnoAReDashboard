@@ -7,32 +7,36 @@
                         <label class="form-control-label">
                             Kategori adı
                         </label>
-                        <input type="text" class="form-control">
+                        <input [(ngModel)]="form.name" type="text" class="form-control">
                     </div>
                     <div class="form-group col-12">
                         <label class="form-control-label">
                           Kategori Açıklaması
                         </label>
                        
-                        ,<textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        ,<textarea [(ngModel)]="form.conten"  name="" id="" cols="30" rows="5" class="form-control"></textarea>
                     </div>
                 </div>
-                <div class="form-group col-12">
+                <div *ngIf="Visible"  class="form-group col-12">
                     <label class="form-control-label">
                        Kategori Fotoğrafı
                     </label>
                     <small class="form-text text-muted mb-2 mt-0">Dosyanı sürekleyerek aşağıdaki bırakınız</small>
                     <div class="form-control file-input">
                         <small class="form-text text-muted mb-2 mt-0">Dosyanızı yüklemek için buraya tıklayın</small>
-                        <input type="file" name="file" class="file-input-img opacity-0">
+                        <input (change)="changeImage($event)" accept=".png, .jpg, .jpeg" type="file" name="file" class="file-input-img opacity-0">
                     </div>
                 </div>
-           
+                <div *ngIf="!Visible" class="form-group col-12 img-container">
+                    <span (click)="removeImg('small')" class="img-remove"><i class="far fa-edit"></i></span>
+                    <img [src]="imgSwov" height="80%" width="20%" style="object-fit: cover;">
+
+                </div>
 
 
             </div>
             <div class="modal-footer">
-                <button type="button"  class="btn btn-sm btn-primary rounded-pill mr-auto" data-dismiss="modal">Ekle</button>
+                <button type="button"  class="btn btn-sm btn-primary rounded-pill mr-auto" (click)="submit()" data-dismiss="modal">Ekle</button>
                 <button type="button" data-dismiss="modal" class="btn btn-sm btn-link text-muted px-2">İptal</button>
 
             </div>

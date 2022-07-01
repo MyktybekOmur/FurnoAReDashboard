@@ -15,7 +15,8 @@ export class ProductSliderComponent implements OnInit {
   obj_link: any =['https://raw.githubusercontent.com/MyktybekOmur/arweb/master/assets/2.glb',
   'https://raw.githubusercontent.com/MyktybekOmur/arweb/master/assets/2.glb',
   'https://raw.githubusercontent.com/MyktybekOmur/arweb/master/assets/3.glb'];
- 
+  @Input() obj: any;
+  @Input() img: any;
 
   constructor() { }
 

@@ -19,7 +19,7 @@
                         <i class="fas fa-file-export mr-2"></i>Dışarı Aktar
                     </a>
                 </div>
-                <a href="#modal-add-category" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4"
+                <a href="#modal-add-category" (click)="openAdd()" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4"
                      data-toggle="modal">
                     <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
                 </a>
@@ -28,25 +28,25 @@
         </div>
     </div>
     <div class="row">
-        <div *ngFor="let item of [].constructor(12); let i=index" class="col-xs-12 col-md-6 col-lg-3">
+        <div *ngFor="let item of categories; let i=index" class="col-xs-12 col-md-6 col-lg-3">
             <div class="card">
                 <div class="card-body text-center"><a class="avatar rounded-circle avatar-lg hover-translate-y-n3">
-                    <img alt="Image placeholder" src="assets/img/products/prd_01.jpeg" class="">
+                    <img alt="Image placeholder" src="{{item?.imageUrl?item?.imageUrl:'assets/img/products/prd_01.jpeg'}}" class="">
                   </a>
-                  <h5 class="h6 my-4"><a>Yatak Odası</a></h5>
+                  <h5 class="h6 my-4"><a>{{item.name}}</a></h5>
                   <div class="avatar-group hover-avatar-ungroup mb-3">
-                    <span class="company-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum architecto consequuntur quaerat, ducimus maxime repellendus!
+                    <span class="company-title">{{item?.conten}}
                     </span>
                   </div>
                   <span class="clearfix"></span>
-                  <span class="badge badge-pill badge-warning">2{{i}}0</span>
+                  <span class="badge badge-pill badge-warning">{{item?.count}}</span>
                 </div>
                 <div class="card-footer">
                   <div class="actions d-flex justify-content-between px-4">
-                    <a href="#modal-add-category" class="action-item" data-toggle="modal">
+                    <a href="#modal-add-category" (click)="openEdit(item,true)" class="action-item" data-toggle="modal">
                         <i class="far fa-edit"></i>
                     </a>
-                    <a (click)="alertConfirmation('5')" class="action-item text-danger">
+                    <a (click)="alertConfirmation(item.id)" class="action-item text-danger">
                       <i class="fas fa-trash-alt"></i>
                     </a>
                   </div>
@@ -61,4 +61,48 @@
     </div>
     <!-- user and reklam block end-->
 </div>
-<app-add-category></app-add-category>
+<div class="modal fade" id="modal-add-category" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label class="form-control-label">
+                            Kategori adı
+                        </label>
+                        <input [(ngModel)]="form.name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="form-control-label">
+                          Kategori Açıklaması
+                        </label>
+                       
+                        ,<textarea [(ngModel)]="form.conten"  name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="Visible"  class="form-group col-12">
+                    <label class="form-control-label">
+                       Kategori Fotoğrafı
+                    </label>
+                    <small class="form-text text-muted mb-2 mt-0">Dosyanı sürekleyerek aşağıdaki bırakınız</small>
+                    <div class="form-control file-input">
+                        <small class="form-text text-muted mb-2 mt-0">Dosyanızı yüklemek için buraya tıklayın</small>
+                        <input (change)="changeImage($event)" accept=".png, .jpg, .jpeg" type="file" name="file" class="file-input-img opacity-0">
+                    </div>
+                </div>
+                <div *ngIf="!Visible" class="form-group col-12 img-container">
+                    <span (click)="removeImg('small')" class="img-remove"><i class="far fa-edit"></i></span>
+                    <img [src]="imgSwov" height="80%" width="20%" style="object-fit: cover;">
+
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-sm btn-primary rounded-pill mr-auto" (click)="submit()" data-dismiss="modal">Ekle</button>
+                <button type="button" data-dismiss="modal" class="btn btn-sm btn-link text-muted px-2">İptal</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,10 +15,10 @@
             </div>
             <div class="col-6 d-flex align-items-center justify-content-end">
                 <div class="actions actions-dark d-inline-block">
-                    <button  routerLink="/admin/products/add-product" type="button" class="btn btn-xs btn-primary btn-icon rounded-pill">
+                    <!-- <button  routerLink="/admin/products/add-product" type="button" class="btn btn-xs btn-primary btn-icon rounded-pill">
                         <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                         <span class="btn-inner--text">Ürünü Düzenle</span>
-                      </button>
+                      </button> -->
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="col--xs-12 col-md-3 obj-height">
                 
                 <!--Swiper -->
-                <app-product-slider ></app-product-slider>
+                <app-product-slider obj="{{prd?.objLink}}" img="{{prd?.imageUrl}}"></app-product-slider>
             
             </div>
             <div class="col-xs-12 col-md-9">
@@ -38,55 +38,14 @@
                         <div class="card-body"><a class="avatar rounded-circle avatar-lg hover-translate-y-n3">
                             <img alt="Image placeholder" src="assets/img/products/prd_01.jpeg" class="">
                           </a>
-                          <h5 class="h6 my-4"><a>Masa</a></h5>
+                          <h5 class="h6 my-4"><a>{{prd?.name}}</a></h5>
                           <div class="avatar-group hover-avatar-ungroup mb-3">
-                            <span class="company-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum architecto consequuntur quaerat, ducimus maxime repellendus!
+                            <span class="company-title">{{prd?.conten}}
                             </span>
                           </div>
-                          <span class="">Fiyatı 6000 TL</span> <br>
-                          <span class="clearfix">Rengi Siyah</span> <br>
-                          <h6 class="h6 my-4">Parçaları</h6>
-                        </div>
-                      </div>
-           
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-xs-12 col-md-3 obj-height">
-             <app-product-slider ></app-product-slider>
-            </div>
-            <div class="col-xs-12 col-md-9">
-                <div class="col-12">
-                 
-                        <div class="card-body"><a class="avatar rounded-circle avatar-lg hover-translate-y-n3">
-                            <img alt="Image placeholder" src="assets/img/products/prd_01.jpeg" class="">
-                          </a>
-                          <h5 class="h6 my-4"><a>1. Sandalye</a></h5>
-                          <div class="avatar-group hover-avatar-ungroup mb-3">
-                            <span class="company-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum architecto consequuntur quaerat, ducimus maxime repellendus!
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-           
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-xs-12 col-md-3 obj-height">
-                  <!--Swiper -->
-                  <app-product-slider ></app-product-slider>
-            </div>
-            <div class="col-xs-12 col-md-9">
-                <div class="col-12">
-                 
-                        <div class="card-body"><a class="avatar rounded-circle avatar-lg hover-translate-y-n3">
-                            <img alt="Image placeholder" src="assets/img/products/prd_01.jpeg" class="">
-                          </a>
-                          <h5 class="h6 my-4"><a>Küçük masa</a></h5>
-                          <div class="avatar-group hover-avatar-ungroup mb-3">
-                            <span class="company-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum architecto consequuntur quaerat, ducimus maxime repellendus!
-                            </span>
-                          </div>
+                          <span class="">Fiyatı {{prd?.price}} TL</span> <br>
+                          <span class="clearfix">Rengi {{prd?.color}}</span> <br>
+                          <h6 class="h6 my-4">{{prd?.category}}</h6>
                         </div>
                       </div>
            
